@@ -42,7 +42,7 @@ end
 # write a function that returns the year of birth from an age
 # disemvowel
 def disemvowel(word)
-# word.delete("aeiou")
+
 word.gsub(/[aeiou]/i, "")
 
 end
@@ -50,21 +50,23 @@ end
 # write a fucntion that removes all ODD number from an array
 # remove_odd
 def remove_odd(a)
-  a.delete_if &:odd?
 
+  a.delete_if { |i| i % 2 != 0 }
 
 end
 
 # write a fucntion that removes all EVEN number from an array
 # remove_even
 def remove_even(a)
-  a.delete_if &:even?
+
+  a.delete_if { |i| i % 2 == 0 }
+
 end
 
 # write a function that takes an array of strings and returns the string with the longest char langth
 # longest_string
 def longest_string(string)
-  string.max_by(&:length)
+  string.max_by { |i| i.length}
 end
 
 # discard the first 3 elements of an array,
